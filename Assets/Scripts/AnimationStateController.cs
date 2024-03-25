@@ -16,10 +16,26 @@ public class AnimationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) {
+if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow) ) {
     animator.SetBool("isWalking", true);
-} else {
+}else{
     animator.SetBool("isWalking", false);
+}
+
+if(Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow)){
+    animator.SetBool("toTheRightWalk",true);
+}else{
+    animator.SetBool("toTheRightWalk",false);
+}
+if(Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow)){
+    animator.SetBool("toTheLeftWalk",true);
+}else{
+    animator.SetBool("toTheLeftWalk",false);
+}
+if(Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow)){
+    animator.SetBool("backwardWalk",true);
+}else{
+    animator.SetBool("backwardWalk",false);
 }
 
 // animator.SetFloat("moveX", Input.GetAxis("Horizontal"));
@@ -32,7 +48,7 @@ if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey(
         }else{
             animator.SetBool("jumping" , false);
         }
-        if(Input.GetKey(KeyCode.LeftControl)){
+        if(Input.GetKey(KeyCode.Mouse0)){
             // Debug.Log("ctrl is pressedd");
             animator.SetBool("isShooting" , true);
         }else{
