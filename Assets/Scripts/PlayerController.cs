@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +8,12 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed = 2.0f;
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.81f;
+     [SerializeField]
+     private Transform barrelTransform;
+     [SerializeField]
+     private Transform bulletparent;
+     [SerializeField]
+     private float bulletHitMissDistance = 25f;
 
     public float rotationSpeed = 5f;
     private CharacterController controller;
@@ -20,14 +27,38 @@ public class PlayerController : MonoBehaviour
     //private InputAction lookAction;
     private InputAction jumpAction;
 
-    private void Start()
+
+    private InputAction shootAction;
+    [SerializeField]
+    private GameObject bulletPrefab;
+    private void Awake()
     {
         controller =GetComponent<CharacterController>();
         playerInput=GetComponent<PlayerInput>();
         cameraTransform = Camera.main.transform;
         moveAction= playerInput.actions["Move"];
         jumpAction= playerInput.actions["Jump"];
+        shootAction=playerInput.actions["Shoot"];
+    }
+    private void OnEnable() {
+        shootAction.performed += _ => shootGun();
+    }
+    private void OnDisable() {
+        shootAction.performed -= _ => shootGun();
 
+    }
+    private void shootGun(){
+        RaycastHit Hit;
+        GameObject bullet = GameObject.Instantiate(bulletPrefab,barrelTransform.position,Quaternion.identity,bulletparent);
+        BulletController bulletController=bullet.GetComponent<BulletController>();
+        if(Physics.Raycast(cameraTransform.position,cameraTransform.forward,out Hit , Mathf.Infinity)){
+            bulletController.target=Hit.point;
+            bulletController.hit=true;
+        }else{
+
+            bulletController.target=cameraTransform.position+cameraTransform.forward*bulletHitMissDistance;
+            bulletController.hit=true;
+        }
     }
 
     void Update()
