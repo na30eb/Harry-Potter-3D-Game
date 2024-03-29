@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9ce64ce6ad1454583ccb9109537d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 20
   animator: {fileID: 0}
 --- !u!4 &5474462214793870231 stripped
 Transform:
