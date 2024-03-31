@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         shootAction = playerInput.actions["Shoot"];
         audioPlayer = GetComponent<AudioSource>();
 
-        Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnEnable()
