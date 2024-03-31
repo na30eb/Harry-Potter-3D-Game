@@ -3,7 +3,13 @@ guid: 5bd2d6f2e9cdd884db6871f28cf940f1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - barrelTransform: {instanceID: 0}
+  - bulletparent: {instanceID: 0}
+  - bulletPrefab: {instanceID: 0}
+  - soundJump: {fileID: 8300000, guid: 81ce814d4ad982d49a46258cb384db6f, type: 3}
+  - soundShoot: {instanceID: 0}
+  - soundWalk: {fileID: 8300000, guid: f09cd452022196648a17d50aa176f37f, type: 3}
   executionOrder: 1700
   icon: {instanceID: 0}
   userData: 
