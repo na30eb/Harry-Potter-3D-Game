@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,14 +8,18 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     public float speed = 5f;
     Rigidbody rig;
+    public HealthBar healthBar; // Reference to the HealthBar script
 
     bool isMoving = true; // Variable to track movement
+    private KillCounter killCounter; // Reference to the KillCounter script
+    private Collider enemyCollider; // Reference to the Collider component
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         rig = GetComponent<Rigidbody>();
+
         // Finding the player GameObject using tag "Player"
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
 
@@ -28,6 +32,20 @@ public class Enemy : MonoBehaviour
         else
         {
             Debug.LogWarning("Player not found with tag 'Player'.");
+        }
+
+        // Find and store a reference to the HealthBar script
+        healthBar = FindObjectOfType<HealthBar>();
+
+        // Find and store a reference to the KillCounter script
+        killCounter = FindObjectOfType<KillCounter>();
+
+        // Get the Collider component attached to the enemy
+        enemyCollider = GetComponent<Collider>();
+
+        if (enemyCollider == null)
+        {
+            Debug.LogWarning("Collider component not found on the enemy GameObject.");
         }
     }
 
@@ -50,8 +68,43 @@ public class Enemy : MonoBehaviour
             animator.SetBool("Kill", true);
             isMoving = false; // Stop moving after being hit by a bullet
 
-            // Start coroutine to make the enemy disappear after 30 seconds of not moving
-            StartCoroutine(DisappearAfterDelay(30f));
+            // Increment kill count when enemy is killed
+            if (killCounter != null)
+            {
+                killCounter.IncrementKillCount();
+            }
+
+            // Decrease player's health
+            
+
+            // Disable the collider
+            if (enemyCollider != null)
+            {
+                enemyCollider.enabled = false;
+            }
+
+            // Start coroutine to make the enemy disappear after 10 seconds of not moving
+            StartCoroutine(DisappearAfterDelay(10f));
+        }
+
+        if (other.CompareTag("Player"))
+        {   
+            animator.SetBool("Attack", true);
+            animator.SetBool("Run", false); // Stop running when colliding with the player
+            if (healthBar != null)
+            {
+                healthBar.TakeDamage(1f); // Adjust damage as needed
+            }
+            
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            animator.SetBool("Attack", false);
+            animator.SetBool("Run", true); // Resume running when no longer colliding with the player
         }
     }
 
@@ -62,7 +115,8 @@ public class Enemy : MonoBehaviour
         // Check if the enemy is still not moving
         if (!isMoving)
         {
-            gameObject.SetActive(false); // Deactivate the enemy GameObject
+            // Deactivate the enemy GameObject
+            gameObject.SetActive(false);
         }
     }
 }
