@@ -1507,12 +1507,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4778199516943618074}
-  - component: {fileID: 8698124743732192524}
   - component: {fileID: 2871068923446507173}
   - component: {fileID: 8006715510251425983}
   - component: {fileID: 3899055771366509268}
   - component: {fileID: 6928920857203616797}
   - component: {fileID: 4706840275132153350}
+  - component: {fileID: 9190555503060116925}
   m_Layer: 0
   m_Name: Arissa
   m_TagString: Enemy
@@ -1537,27 +1537,6 @@ Transform:
   - {fileID: 1017745250276372622}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8698124743732192524
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5261404522847029920}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 2.3304026, z: 1}
-  m_Center: {x: 0, y: 0.6652013, z: 0}
 --- !u!114 &2871068923446507173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1621,12 +1600,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.28
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.84, z: 0}
 --- !u!95 &6928920857203616797
 Animator:
   serializedVersion: 7
@@ -1670,7 +1649,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.29962158
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -1746,6 +1725,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &9190555503060116925
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5261404522847029920}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.26
+  m_Height: 2.0814965
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.77074826, z: 0}
 --- !u!1 &5296647608125137713
 GameObject:
   m_ObjectHideFlags: 0
