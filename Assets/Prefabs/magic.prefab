@@ -80,13 +80,13 @@ TrailRenderer:
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.5
+    widthMultiplier: 0.2
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.20264304
-        value: 0.9787225
+        time: 0.732558
+        value: 0.96841323
         inSlope: 0.21307883
         outSlope: 0.21307883
         tangentMode: 0
@@ -94,8 +94,8 @@ TrailRenderer:
         inWeight: 0
         outWeight: 1
       - serializedVersion: 3
-        time: 0.9339062
-        value: 0.00000035762787
+        time: 1
+        value: 0.06185949
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -139,7 +139,7 @@ TrailRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-    textureScale: {x: 1, y: 1}
+    textureScale: {x: 0.37, y: 0.4}
     shadowBias: 0.5
     generateLightingData: 0
   m_MinVertexDistance: 0.1
@@ -435,7 +435,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2.04
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5057,7 +5057,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.37
+  m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9131325844150753073
 GameObject:
