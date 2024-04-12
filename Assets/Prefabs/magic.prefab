@@ -107,7 +107,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.9245283, g: 0.7595746, b: 0.3532396, a: 1}
+      key0: {r: 0.9254902, g: 0.42768568, b: 0.35294124, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -5106,3 +5106,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDecal: {fileID: 5124171497581456558, guid: 8f43f15b156c69544831c5b5123d7e37, type: 3}
+  speed: 30
