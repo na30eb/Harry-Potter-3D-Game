@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 4338294489993715387}
   m_Layer: 0
   m_Name: MagicBall
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5069,6 +5069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6263381549309379358}
   - component: {fileID: 3237477588696985036}
+  - component: {fileID: 2335467655094288251}
   m_Layer: 0
   m_Name: magic
   m_TagString: Bullet
@@ -5107,3 +5108,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletDecal: {fileID: 5124171497581456558, guid: 8f43f15b156c69544831c5b5123d7e37, type: 3}
   speed: 30
+--- !u!135 &2335467655094288251
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9131325844150753073}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.22
+  m_Center: {x: 0, y: 0, z: 0}
