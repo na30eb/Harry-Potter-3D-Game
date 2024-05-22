@@ -773,7 +773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   animator: {fileID: 0}
-  speed: 8
+  speed: 7
   healthBar: {fileID: 0}
 --- !u!54 &8783390302107389935
 Rigidbody:
