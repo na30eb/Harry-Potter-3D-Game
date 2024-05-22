@@ -1666,27 +1666,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e43b023d4b666a3468f5da4c7d0c702a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 210.67
+      value: 562.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e43b023d4b666a3468f5da4c7d0c702a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 210.67
+      value: 562.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e43b023d4b666a3468f5da4c7d0c702a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 210.67
+      value: 562.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e43b023d4b666a3468f5da4c7d0c702a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 110
+      value: 575
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e43b023d4b666a3468f5da4c7d0c702a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -424
+      value: -623
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e43b023d4b666a3468f5da4c7d0c702a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 574
+      value: 594
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e43b023d4b666a3468f5da4c7d0c702a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1723,6 +1723,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e43b023d4b666a3468f5da4c7d0c702a, type: 3}
       propertyPath: m_Name
       value: Mutant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613815499662603714, guid: e43b023d4b666a3468f5da4c7d0c702a, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1.06
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1963,7 +1967,7 @@ Canvas:
   m_GameObject: {fileID: 2043792737}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1055108846}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
