@@ -33,6 +33,7 @@ public class BulletController : MonoBehaviour
             Destroy(gameObject);
         }
         
+        
     }
     private void OnCollisionEnter(Collision other){
         ContactPoint contact = other.GetContact(0);
