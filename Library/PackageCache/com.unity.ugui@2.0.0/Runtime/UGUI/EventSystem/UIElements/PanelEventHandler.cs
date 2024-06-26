@@ -1,4 +1,5 @@
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace UnityEngine.UIElements
 {
@@ -43,6 +44,8 @@ namespace UnityEngine.UIElements
         private Focusable currentFocusedElement => m_Panel?.focusController.GetLeafFocusedElement();
 
         private readonly PointerEvent m_PointerEvent = new PointerEvent();
+
+        private float m_LastClickTime = 0;
 
         protected override void OnEnable()
         {
@@ -190,7 +193,7 @@ namespace UnityEngine.UIElements
 
         public void OnPointerClick(PointerEventData eventData)
         {
-
+            m_LastClickTime = Time.unscaledTime;
         }
 
         public void OnSubmit(BaseEventData eventData)
@@ -442,19 +445,11 @@ namespace UnityEngine.UIElements
                 // Flip Y axis between input and UITK
                 var h = Screen.height;
 
-                var eventPosition = Display.RelativeMouseAt(eventData.position);
-                if (eventPosition != Vector3.zero)
-                {
-                    // We support multiple display and display identification based on event position.
+                Vector3 eventPosition = MultipleDisplayUtilities.GetRelativeMousePositionForRaycast(eventData);
+                int eventDisplayIndex = (int)eventPosition.z;
 
-                    int eventDisplayIndex = (int)eventPosition.z;
-                    if (eventDisplayIndex > 0 && eventDisplayIndex < Display.displays.Length)
-                        h = Display.displays[eventDisplayIndex].systemHeight;
-                }
-                else
-                {
-                    eventPosition = eventData.position;
-                }
+                if (eventDisplayIndex > 0 && eventDisplayIndex < Display.displays.Length)
+                    h = Display.displays[eventDisplayIndex].systemHeight;
 
                 var delta = eventData.delta;
                 eventPosition.y = h - eventPosition.y;
@@ -488,6 +483,11 @@ namespace UnityEngine.UIElements
 
                     if (eventType == PointerEventType.Down)
                     {
+                        // UUM-57082: InputSystem doesn't reset clickCount on delay until after it sends PointerDown
+                        // This is not perfect but it's the best we can do with incomplete information.
+                        if (Time.unscaledTime > self.m_LastClickTime + ClickDetector.s_DoubleClickTime * 0.001f)
+                            clickCount = 0;
+
                         // Case 1379054: UIToolkit assumes clickCount is increased before PointerDown, but UGUI does it after.
                         clickCount++;
 
