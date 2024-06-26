@@ -1513,7 +1513,7 @@ namespace UnityEngine.UI
                         else if (characterValidation != CharacterValidation.None)
                             c = Validate(m_Text, m_Text.Length, c);
 
-                        if (lineType == LineType.MultiLineSubmit && c == '\n')
+                        if (lineType != LineType.MultiLineNewline && c == '\n')
                         {
                             m_Keyboard.text = m_Text;
 

@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController), typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
-    public float playerSpeed = 2.0f;
+    public float playerSpeed = 4.0f;
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.81f;
     public float rotationSpeed = 5f;

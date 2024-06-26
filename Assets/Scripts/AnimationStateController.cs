@@ -24,18 +24,24 @@ if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow) ) {
 
 if(Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow)){
     animator.SetBool("toTheRightWalk",true);
+    moveSpeed=1f;
 }else{
     animator.SetBool("toTheRightWalk",false);
+    moveSpeed=5f;
 }
 if(Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow)){
     animator.SetBool("toTheLeftWalk",true);
+        moveSpeed=1f;
 }else{
     animator.SetBool("toTheLeftWalk",false);
+        moveSpeed=5f;
 }
 if(Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow)){
     animator.SetBool("backwardWalk",true);
+        moveSpeed=1f;
 }else{
     animator.SetBool("backwardWalk",false);
+        moveSpeed=5f;
 }
 
 // animator.SetFloat("moveX", Input.GetAxis("Horizontal"));
