@@ -85,8 +85,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.732558
-        value: 0.96841323
+        time: 0.74738955
+        value: 0.6238183
         inSlope: 0.21307883
         outSlope: 0.21307883
         tangentMode: 0
@@ -137,8 +137,8 @@ TrailRenderer:
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 0
-    textureMode: 0
+    alignment: 1
+    textureMode: 1
     textureScale: {x: 0.37, y: 0.4}
     shadowBias: 0.5
     generateLightingData: 0
@@ -371,7 +371,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.8867924, g: 0.15477037, b: 0.15477037, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -435,7 +435,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.08
+      scalar: 1.24
       minScalar: 1
       maxCurve:
         serializedVersion: 2

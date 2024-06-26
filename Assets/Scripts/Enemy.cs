@@ -55,9 +55,11 @@ public class Enemy : MonoBehaviour
         // Checking if target is not null before chasing and character is allowed to move
         if (target != null && isMoving)
         {
-            Vector3 pos = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            Vector3 pos = Vector3.MoveTowards(rig.position, target.position, speed * Time.fixedDeltaTime);
             rig.MovePosition(pos);
-            transform.LookAt(target);
+            Vector3 direction = (target.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+            rig.MoveRotation(lookRotation);
         }
     }
 
