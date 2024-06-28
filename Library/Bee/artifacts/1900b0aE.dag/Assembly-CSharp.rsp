@@ -428,6 +428,8 @@
 "Assets/Scripts/EnemySpawners.cs"
 "Assets/Scripts/HealthBar.cs"
 "Assets/Scripts/KillCounter.cs"
+"Assets/Scripts/LostCounter.cs"
+"Assets/Scripts/LostObject.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/SwitchVcam.cs"
