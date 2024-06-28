@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     private KillCounter killCounter; // Reference to the KillCounter script
     private Collider enemyCollider; // Reference to the Collider component
 
+    private bool isDead = false; // Variable to track if the enemy is dead
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,8 +67,9 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bullet"))
+        if (other.CompareTag("Bullet") && !isDead)
         {
+            isDead = true; // Mark the enemy as dead
             animator.SetBool("Kill", true);
             isMoving = false; // Stop moving after being hit by a bullet
 
@@ -75,9 +78,6 @@ public class Enemy : MonoBehaviour
             {
                 killCounter.IncrementKillCount();
             }
-
-            // Decrease player's health
-            
 
             // Disable the collider
             if (enemyCollider != null)
@@ -97,7 +97,6 @@ public class Enemy : MonoBehaviour
             {
                 healthBar.TakeDamage(1f); // Adjust damage as needed
             }
-            
         }
     }
 
